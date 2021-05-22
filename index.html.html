@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페</title>
+    <link rel ="stylesheet" href ="카페.css">
+</head>
+<script>
+var sum = 0;//함수 안에 지역변수로 선언하면 0으로 계속 초기화돼서 sum+=으로 더해지지 않는 거였음.
+
+function calc(button) {
+	
+	if(button)
+		sum+= parseInt(button.value);//parseInt를 안하면 값이 더하기가 안되고 옆에 붙여넣기가 됨
+        		
+	else
+		sum-= button.value;
+	
+        
+     document.getElementById("sumtext").value = sum;	
+}
+function Reset(){
+    document.getElementById("sumtext").value = 0;
+}
+
+
+
+</script>
+<body>
+ 
+
+<button type = "button" id="c1" value="5000" onclick="calc(this)">
+    아메리카노 - 5000원
+</button>
+
+<br>
+
+<button type = "button" id="c2" value="4000" onclick="calc(this)">
+    카페라떼 - 4000원
+</button>
+
+<br>
+
+<button type = "button" id="c3" value="6000" onclick="calc(this)">
+ 
+    카라멜마끼야토 - 6000원
+</button>
+
+<br>
+
+<button type = "button" id="c4" value="4500" onclick="calc(this)">
+  
+    민트초코 - 4500원
+</button>
+
+<br>
+
+<input type="text" id="sumtext" value="" >
+
+<br>
+
+<button type = "button" id = "reset" value ="0" onclick = "Reset()">
+    reset
+</button>
+
+
+
+</body>
+</html>
